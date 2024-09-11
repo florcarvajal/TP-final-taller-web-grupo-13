@@ -31,7 +31,7 @@ public class Carrito {
 
     public Double calcularTotal() {
         return libros.stream()
-                .mapToDouble(Libro::getPrecio) // Asumiendo que hay un método getPrecio en la clase Libro
+                .mapToDouble(Libro::getPrecio) 
                 .sum();
     }
 }
