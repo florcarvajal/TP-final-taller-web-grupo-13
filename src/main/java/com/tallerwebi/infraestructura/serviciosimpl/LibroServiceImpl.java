@@ -23,8 +23,7 @@ public class LibroServiceImpl implements LibroService {
 
     @Override
     public Libro buscarPorId(Long id) {
-        return repositorioLibro.buscarLibroPorId(id).orElseThrow(() ->
-                new ResourceNotFoundException("Book not found with id: " + id));
+        return repositorioLibro.buscarLibroPorId(id);
     }
 
     @Override

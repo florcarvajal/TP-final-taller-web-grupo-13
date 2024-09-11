@@ -1,8 +1,12 @@
 package com.tallerwebi.infraestructura.serviciosimpl;
 
 
+import com.tallerwebi.dominio.entidades.Carrito;
 import com.tallerwebi.dominio.entidades.Libro;
 import com.tallerwebi.dominio.servicios.CarritoService;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CarritoServiceImpl implements CarritoService {
@@ -34,7 +38,7 @@ public class CarritoServiceImpl implements CarritoService {
     }
 
     @Override
-    public double calcularTotal() {
+    public Double calcularTotal() {
         return carrito.calcularTotal();
     }
 }
