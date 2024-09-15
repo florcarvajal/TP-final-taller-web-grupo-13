@@ -31,7 +31,7 @@ public class Carrito {
 
     public Double calcularTotal() {
         return libros.stream()
-                .mapToDouble(Libro::getPrecio) 
+                .mapToDouble(Libro::getPrecio)
                 .sum();
     }
 }
