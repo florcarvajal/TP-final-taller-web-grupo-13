@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>El rincon del lectura</title>
+    <link rel="stylesheet" href="/resources/core/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <!-- Menu de navegacion -->
+        <div class="w3-bar menu">
+                <!-- Logo-->
+                <img class="logo" src="imagenes/LOGO.png" alt="Logo">
+
+                <!-- Secciones a otras paginas del sitio-->
+                <a href="#home" class="w3-bar-item">Inicio</a>
+                <a href="#mislibros" class="w3-bar-item">Mis libros</a>
+
+                <!-- Buscador de libros-->
+                <div class="buscar">
+                    <input type="text" class="w3-input" id="busqueda" placeholder="Buscar libros...">
+                    <button  id="buscarBtn">Buscar</button>
+                </div>
+
+            <div>
+                <!-- Carrito de compras-->
+                <div class="w3-dropdown-hover w3-right">
+                    <button class="w3-button carrito">
+                        <img src="imagenes/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="Carrito">
+                    </button>
+                    <div id="carritoDropdown" class="w3-dropdown-content w3-bar-block w3-border">
+                        <!-- Los libros agregados aparecerán aquí -->
+                        <p id="carritoVacio">El carrito está vacío</p>
+                    </div>
+                </div>
+                <!-- Enlace al perfil del usuario-->
+                <div class="w3-dropdown-hover w3-right">
+                    <button class="w3-button perfil">
+                        <img src="imagenes/local_library_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="Perfil">
+                    </button>
+                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                        <a href="#" class="w3-bar-item w3-button">Mi perfil</a>
+                        <a href="#" class="w3-bar-item w3-button">Seguidores</a>
+                        <a href="#" class="w3-bar-item w3-button">Seguidos</a>
+                        <a href="#" class="w3-bar-item w3-button">Mis reseñas</a>
+                        <a href="#" class="w3-bar-item w3-button">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+    <div class="info_libro">
+    <div class="">
+        <!-- Foto portada del libro -->
+        <img class="portada_del_libro" src="./imagenes/orgulloyprejuicio.jpeg">
+        <br>
+
+        <!-- Botones debajo de la portada-->
+        <div class="botones_abajoportada">
+            <!-- Boton para agregar al carrito -->
+            <button onclick="agregarAlCarrito()">Comprar</button>
+
+            <!-- Boton para agregar a mis libros-->
+            <button onclick="cambiarTexto(this)">Agregar a mis libros</button>
+
+            <!-- Boton que redirige para escribir una reseña sobre el libro-->
+            <button onclick="escribirReseña()">Escribe una reseña ✍️</button>
+
+            <p>Califica este libro</p>
+            <div class="rating">
+                <span class="star" data-value="5">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="1">&#9733;</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="producto">
+        <h1 class="titulo">Orgullo y Prejuicio</h1>
+        <h2 class="autor">Jane Austen</h2>
+        <h4 class="precio">$4000.00</h4>
+        </div>
+        <p>Es una novela de desarrollo personal, en la que las dos figuras principales, Elizabeth Bennet y Fitzwilliam Darcy, cada uno a su manera y, no obstante, de forma muy parecida, deben madurar para superar algunas crisis y aprender de sus errores para poder encarar el futuro en común, superando el orgullo de clase de Darcy y los prejuicios de Elizabeth hacia él.</p>
+        <p>Géneros:
+            <a href="#">Ficción</a>
+            <a href="#">Ficción histórica</a>
+            <a href="#">Histórico</a>
+            <a href="#">Literatura</a>
+            <a href="#">Novelas</a>
+            <a href="#">Romance histórico</a>
+        </p>
+        <hr style="border: 0.5px solid grey;">
+
+        <h3>Sobre el autor</h3>
+        <div class="sobre-el-autor">
+        <img src="imagenes/janeausten.jpg">
+        <a href="#"> <h3>Jane Austen</h3></a>
+        <button onclick="cambiarTexto2(this)">Seguir</button>
+        </div>
+        <p>Jane Austen fue una novelista inglesa conocida principalmente por sus seis novelas, que implícitamente interpretan, critican y comentan sobre la nobleza terrateniente británica a fines del siglo XVIII. Las tramas de Austen a menudo exploran la dependencia de las mujeres del matrimonio para la búsqueda de una posición social favorable y seguridad económica. Sus obras son una crítica implícita de las novelas de sensibilidad de la segunda mitad del siglo XVIII y son parte de la transición al realismo literario del siglo XIX. Su hábil uso del comentario social, el realismo y la ironía mordaz le han valido el reconocimiento entre los críticos y académicos.
+            Las publicadas anónimamente Sentido y sensibilidad (1811), Orgullo y prejuicio (1813), Mansfield Park (1814) y Emma (1816), tuvieron un éxito modesto pero le aportaron poca fama en vida. Austen escribió otras dos novelas (La abadía de Northanger y Persuasión, ambas publicadas póstumamente en 1817) y comenzó otra, titulada finalmente Sanditon, pero murió antes de terminarla. También dejó tres volúmenes de escritos juveniles en manuscrito, la novela epistolar corta Lady Susan y la novela inacabada Los Watson.
+            Desde su muerte, las novelas de Austen rara vez han dejado de imprimirse. Una transición significativa en su reputación se produjo en 1833, cuando se volvieron a publicar en la serie Standard Novels de Richard Bentley (ilustradas por Ferdinand Pickering y vendidas como un conjunto). Poco a poco fueron ganando gran aceptación y lectores populares. En 1869, cincuenta y dos años después de su muerte, la publicación de A Memoir of Jane Austen por parte de su sobrino presentó una versión convincente de su carrera como escritora y su vida supuestamente anodina a un público entusiasta. Su obra ha inspirado una gran cantidad de ensayos críticos y ha sido incluida en muchas antologías literarias. Sus novelas también han inspirado muchas películas</p>
+        <hr style="border: 0.5px solid grey;">
+
+        <h3>Reseñas</h3>
+        <textarea placeholder=" Escribi tu reseña ..." class="review" id="reseña"></textarea>
+        <button type="submit">Publicar reseña</button>
+        <div class="review-container">
+            <div class="review">
+                <img src="https://via.placeholder.com/60" alt="Usuario 1">
+                <div class="review-content">
+                    <h4>Usuario1</h4>
+                    <p>Una obra maestra de la literatura. Jane Austen captura perfectamente la complejidad de las relaciones humanas. Altamente recomendado.</p>
+                </div>
+            </div>
+
+            <div class="review">
+                <img src="https://via.placeholder.com/60" alt="Usuario 2">
+                <div class="review-content">
+                    <h4>Usuario2</h4>
+                    <p>La trama de orgullo y prejuicio es fascinante. Los personajes están muy bien desarrollados, y el romance es encantador. Lo volvería a leer.</p>
+                </div>
+            </div>
+
+            <div class="review">
+                <img src="https://via.placeholder.com/60" alt="Usuario 3">
+                <div class="review-content">
+                    <h4>Usuario3</h4>
+                    <p>Un libro increíble que me enganchó desde el principio. Elizabeth Bennet es un personaje inolvidable y muy inspirador.</p>
+                </div>
+            </div>
+
+            <div class="review">
+                <img src="https://via.placeholder.com/60" alt="Usuario 4">
+                <div class="review-content">
+                    <h4>Usuario4</h4>
+                    <p>Orgullo y Prejuicio es una lectura imprescindible para cualquier amante de la literatura clásica. La prosa de Austen es hermosa.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</main>
+<footer>
+
+</footer>
+<script src="/resources/core/js/js.js"></script>
+
+</body>
+</html>
