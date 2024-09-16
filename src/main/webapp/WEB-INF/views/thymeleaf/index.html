@@ -15,7 +15,7 @@
         <!-- Menu de navegacion -->
         <div class="w3-bar menu">
                 <!-- Logo-->
-                <img class="logo" src="/resources/imagenes/LOGO.png" alt="Logo">
+            <img class="logo" th:src="@{/imagenes/LOGO.png}" alt="Logo">
 
                 <!-- Secciones a otras paginas del sitio-->
                 <a href="#home" class="w3-bar-item">Inicio</a>
@@ -31,7 +31,7 @@
                 <!-- Carrito de compras-->
                 <div class="w3-dropdown-hover w3-right">
                     <button class="w3-button carrito">
-                        <img src="/resources/imagenes/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="Carrito">
+                        <img th:src="@{/imagenes/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Carrito">
                     </button>
                     <div id="carritoDropdown" class="w3-dropdown-content w3-bar-block w3-border">
                         <!-- Los libros agregados aparecerán aquí -->
@@ -41,7 +41,7 @@
                 <!-- Enlace al perfil del usuario-->
                 <div class="w3-dropdown-hover w3-right">
                     <button class="w3-button perfil">
-                        <img src="/resources/imagenes/local_library_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="Perfil">
+                        <img th:src="@{/imagenes/local_library_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Perfil">
                     </button>
                     <div class="w3-dropdown-content w3-bar-block w3-border">
                         <a href="#" class="w3-bar-item w3-button">Mi perfil</a>
@@ -62,7 +62,7 @@
     <div class="info_libro">
     <div class="">
         <!-- Foto portada del libro -->
-        <img class="portada_del_libro" src="/resources/imagenes/orgulloyprejuicio.jpeg">
+        <img class="portada_del_libro" th:src="@{/imagenes/orgulloyprejuicio.jpeg}" alt="Portada del libro">
         <br>
 
         <!-- Botones debajo de la portada-->
@@ -105,7 +105,7 @@
 
         <h3>Sobre el autor</h3>
         <div class="sobre-el-autor">
-        <img src="/resources/imagenes/janeausten.jpg">
+            <img th:src="@{/imagenes/janeausten.jpg}" alt="Jane Austen">
         <a href="#"> <h3>Jane Austen</h3></a>
         <button onclick="cambiarTexto2(this)">Seguir</button>
         </div>
