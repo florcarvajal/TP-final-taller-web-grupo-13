@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rincón del Libro</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<nav>
+    <div class="w3-bar menu">
+        <img class="logo" th:src="@{/imagenes/LOGO.png}" alt="Logo">
+        <a href="#home" class="w3-bar-item">Inicio</a>
+        <a href="#mislibros" class="w3-bar-item">Mis libros</a>
+        <div class="buscar">
+            <input type="text" class="w3-input" id="busqueda" placeholder="Buscar libros...">
+            <button id="buscarBtn">Buscar</button>
+        </div>
+        <div class="w3-dropdown-hover w3-right">
+            <a th:href="@{/carrito}">
+                <button class="w3-button carrito">
+                    <img th:src="@{/imagenes/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Carrito">
+                </button>
+            </a>
+        </div>
+
+        <div class="w3-dropdown-hover w3-right">
+            <button class="w3-button perfil">
+                <img th:src="@{/imagenes/local_library_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Perfil">
+            </button>
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+                <a href="#" class="w3-bar-item w3-button">Mi perfil</a>
+                <a th:href="@{/logout}" class="w3-bar-item w3-button">Cerrar sesión</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="libro : ${libros}">
+            <td th:text="${libro.titulo}"></td>
+            <td th:text="${libro.autor}"></td>
+            <td th:text="${libro.precio} + ' $'"></td>
+            <td>
+                <form th:action="@{/agregar-al-carrito/{id}(id=${libro.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-dark">Agregar al Carrito</button>
+                </form>
+                <a th:href="@{/libro/{id}(id=${libro.id})}" class="btn btn-secondary">Ver Detalles</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
