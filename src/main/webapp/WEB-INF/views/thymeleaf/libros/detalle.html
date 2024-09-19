@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>El rincón del lectura</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header>
+
+
+    <nav>
+        <div class="w3-bar menu">
+            <img class="logo" th:src="@{/imagenes/LOGO.png}" alt="Logo">
+            <a  th:href="@{/libros}" class="w3-bar-item">Inicio</a>
+            <a href="#mislibros" class="w3-bar-item">Mis libros</a>
+            <div class="buscar">
+                <input type="text" class="w3-input" id="busqueda" placeholder="Buscar libros...">
+                <button id="buscarBtn">Buscar</button>
+            </div>
+            <div class="w3-dropdown-hover w3-right">
+                <a th:href="@{/carrito}">
+                    <button class="w3-button carrito">
+                        <img th:src="@{/imagenes/shopping_cart_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Carrito">
+                    </button>
+                </a>
+            </div>
+
+            <div class="w3-dropdown-hover w3-right">
+                <button class="w3-button perfil">
+                    <img th:src="@{/imagenes/local_library_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg}" alt="Perfil">
+                </button>
+                <div class="w3-dropdown-content w3-bar-block w3-border">
+                    <a href="#" class="w3-bar-item w3-button">Mi perfil</a>
+                    <a th:href="@{/logout}" class="w3-bar-item w3-button">Cerrar sesión</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="info_libro">
+        <div class="">
+            <img class="portada_del_libro" th:src="@{/imagenes/orgulloyprejuicio.jpeg}" alt="Portada del libro">
+            <br>
+            <div class="botones_abajoportada">
+                <button>Agregar al Carrito</button>
+                <button onclick="escribirReseña()">Escribe una reseña </button>
+                <p>Califica este libro</p>
+                <div class="rating">
+                    <span class="star" data-value="5">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="1">&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="producto">
+                <h1 class="titulo" th:text="${libro.titulo}"></h1>
+                <h2 class="autor" th:text="${libro.autor}"></h2>
+                <h4 class="precio" th:text="${libro.precio} + ' $'"></h4>
+            </div>
+            <p>Es una novela de desarrollo personal, en la que las dos figuras principales, Elizabeth Bennet y Fitzwilliam Darcy, cada uno a su manera y, no obstante, de forma muy parecida, deben madurar para superar algunas crisis y aprender de sus errores para poder encarar el futuro en común, superando el orgullo de clase de Darcy y los prejuicios de Elizabeth hacia él.</p>
+            <p>Géneros:
+                <a href="#">Ficción</a>
+                <a href="#">Ficción histórica</a>
+                <a href="#">Histórico</a>
+                <a href="#">Literatura</a>
+                <a href="#">Novelas</a>
+                <a href="#">Romance histórico</a>
+            </p>
+            <hr style="border: 0.5px solid grey;">
+
+            <h3>Sobre el autor</h3>
+            <div class="sobre-el-autor">
+                <img th:src="@{/imagenes/janeausten.jpg}" alt="Jane Austen">
+                <h3>Jane Austen</h3>
+                <button onclick="cambiarTexto2(this)">Seguir</button>
+            </div>
+            <p>Jane Austen fue una novelista inglesa conocida principalmente por sus seis novelas, que implícitamente interpretan, critican y comentan sobre la nobleza terrateniente británica a fines del siglo XVIII...</p>
+            <hr style="border: 0.5px solid grey;">
+
+            <h3>Reseñas</h3>
+            <textarea placeholder=" Escribí tu reseña ..." class="review" id="reseña"></textarea>
+            <button type="submit">Publicar reseña</button>
+            <div class="review-container">
+                <div class="review">
+                    <img src="https://via.placeholder.com/60" alt="Usuario 1">
+                    <div class="review-content">
+                        <h4>Usuario1</h4>
+                        <p>Una obra maestra de la literatura. Jane Austen captura perfectamente la complejidad de las relaciones humanas. Altamente recomendado.</p>
+                    </div>
+                </div>
+                <!-- Más reseñas -->
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 El rincón del lectura</p>
+</footer>
+
+
+</body>
+</html>

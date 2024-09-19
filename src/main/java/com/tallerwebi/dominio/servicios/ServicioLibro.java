@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface LibroService {
+public interface ServicioLibro {
 
     List<Libro> buscarTodos();
+    
+     List<Libro> listarLibros();
 
     Libro buscarPorId(Long id);
 
