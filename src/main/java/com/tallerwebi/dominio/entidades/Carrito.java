@@ -17,4 +17,13 @@ public class Carrito {
     public double total() {
         return libros.stream().mapToDouble(Libro::getPrecio).sum();
     }
+
+    public void eliminarLibro(Libro libro) {
+    libros.remove(libro);
+
+    }
+
+    public void vaciarCarrito() {
+    libros.clear();
+    }
 }
