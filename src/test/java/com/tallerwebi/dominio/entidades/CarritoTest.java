@@ -21,28 +21,28 @@ public class CarritoTest {
     @Test
     public void testAgregarLibro() {
         carrito.agregarLibro(libroMock);
-        assertEquals(1, carrito.getLibros().size());
+        assertEquals(1, carrito.obtenerLibros().size());
     }
 
     @Test
     public void testAgregarLibroDuplicadoNoSeAgrega() {
         carrito.agregarLibro(libroMock);
         carrito.agregarLibro(libroMock);
-        assertEquals(1, carrito.getLibros().size());
+        assertEquals(1, carrito.obtenerLibros().size());
     }
 
     @Test
     public void testEliminarLibro() {
         carrito.agregarLibro(libroMock);
         carrito.eliminarLibro(libroMock);
-        assertEquals(0, carrito.getLibros().size());
+        assertEquals(0, carrito.obtenerLibros().size());
     }
 
     @Test
     public void testVaciarCarrito() {
         carrito.agregarLibro(libroMock);
         carrito.vaciarCarrito();
-        assertEquals(0, carrito.getLibros().size());
+        assertEquals(0, carrito.obtenerLibros().size());
     }
 
     @Test
@@ -56,6 +56,6 @@ public class CarritoTest {
         carrito.agregarLibro(libro1);
         carrito.agregarLibro(libro2);
 
-        assertEquals(6000.0, carrito.total());
+        assertEquals(6000.0, carrito.calcularTotal());
     }
 }
